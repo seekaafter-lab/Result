@@ -1,0 +1,32 @@
+{
+  "name": "저는 봄이 와도 꽃을 볼 수 없답니다",
+  "short_name": "봄이 와도",
+  "description": "꽃밭의 군인들이 운영하는 카페. 손님은 당신이고, 잔고는 오르지 않습니다.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#140e12",
+  "theme_color": "#140e12",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

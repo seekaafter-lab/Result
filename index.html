@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#140e12">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="봄이 와도">
+  <title>저는 봄이 와도 꽃을 볼 수 없답니다</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="wrap">
+    <section id="titleScreen">
+      <p class="eyebrow">꽃밭의 군인들 운영</p>
+      <h1>저는 봄이 와도<br>꽃을 볼 수 없답니다</h1>
+      <p class="slogan">속은 시커먼 뱀굴이지만 겉은 화사한 꽃밭입니다 🌸</p>
+      <canvas id="titleCv" width="320" height="180"></canvas>
+      <p id="titleHint">아직은 화사한 꽃밭입니다.</p>
+      <div class="title-actions">
+        <button type="button" data-act="enter">카페에 들어간다</button>
+        <button type="button" data-act="continue" id="continueBtn" hidden>통장을 이어 펼친다</button>
+        <button type="button" class="ghost" data-act="help">이용 안내</button>
+      </div>
+      <aside id="installCard" class="install-card">
+        <p class="eyebrow">홈 화면에서 열기</p>
+        <p>사파리로 이 페이지를 연 다음, 아래쪽 <span class="nowrap">공유
+          <svg class="share-mark" viewBox="0 0 16 16" aria-hidden="true">
+            <rect fill="none" stroke="#241418" stroke-width="1.6" x="3" y="6" width="10" height="8"/>
+            <path d="M8 2v7M5.5 4.5 8 2l2.5 2.5" fill="none" stroke="#241418" stroke-width="1.6"/>
+          </svg></span>
+          를 누르고 <span class="nowrap">홈 화면에 추가</span>를 고르면 아이콘으로 실행됩니다. 스토어 앱은 아닙니다.</p>
+        <p id="installChrome" hidden>지금 화면은 사파리가 아닙니다. 주소창을 길게 눌러 사파리로 연 뒤에 홈 화면에 추가해 주세요.</p>
+        <button type="button" class="ghost" data-act="hide-install">안내 접기</button>
+      </aside>
+    </section>
+
+    <section id="gameScreen" hidden>
+      <header id="hud">
+        <div class="hud-row">
+          <h2>저는 봄이 와도 꽃을 볼 수 없답니다</h2>
+          <button type="button" id="muteBtn">소리 켜짐</button>
+        </div>
+        <p class="slogan small">속은 시커먼 뱀굴이지만 겉은 화사한 꽃밭입니다 🌸</p>
+        <div class="stats">
+          <strong id="hudRound">ROUND 1</strong>
+          <span id="hudRank">새싹 등급</span>
+          <span id="hudRoom">지상 · 카페</span>
+        </div>
+        <div class="stats">
+          <strong id="hudMoney">5,000원</strong>
+          <span id="hudEmotion">감정 0.0%</span>
+          <span id="hudSpent">바친 돈 0원</span>
+        </div>
+        <div class="stats">
+          <span id="hudNext">잡초까지 결제 0/3</span>
+          <div class="bar" aria-hidden="true"><span id="hudBar"></span></div>
+        </div>
+        <div id="hudTags"></div>
+      </header>
+      <div id="stage">
+        <canvas id="cv" width="320" height="180"></canvas>
+        <div id="spots"></div>
+        <div id="decor"></div>
+        <div id="toasts"></div>
+      </div>
+      <section id="dialogBox">
+        <div class="who">
+          <svg class="helm" viewBox="0 0 16 16" width="32" height="32" aria-hidden="true">
+            <rect fill="var(--helmet, #738255)" x="3" y="1" width="10" height="7"/>
+            <rect fill="#3f4a32" x="2" y="7" width="12" height="2"/>
+            <rect fill="#f3c2a4" x="5" y="5" width="6" height="4"/>
+            <rect fill="#241418" x="6" y="6" width="1" height="2"/>
+            <rect fill="#241418" x="9" y="6" width="1" height="2"/>
+            <rect fill="var(--uniform, #2f6a4a)" x="4" y="9" width="8" height="6"/>
+            <rect fill="#ff8fab" x="10" y="10" width="2" height="2"/>
+          </svg>
+          <span id="speaker">상병 꽃순이</span>
+        </div>
+        <p id="line"></p>
+        <div id="choices"></div>
+      </section>
+    </section>
+  </div>
+  <div id="modal" hidden></div>
+  <script src="js/logic.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/scenes.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
